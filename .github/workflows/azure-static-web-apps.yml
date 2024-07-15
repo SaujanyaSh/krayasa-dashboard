@@ -14,14 +14,16 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     env:
-      API_URL: https://api.chalyo.com/graphql
-      API_URI: https://api.chalyo.com/graphql
-      STATIC_URL: d1j7dqw93emtwa.cloudfront.net
+      API_URL: https://api.chalyo.com/graphql/
+      API_URI: https://api.chalyo.com/graphql/
+      STATIC_URL: https://d1j7dqw93emtwa.cloudfront.net/
       APPS_MARKETPLACE_API_URI: https://apps.saleor.io/api/v2/saleor-apps
       LOCALE_CODE: "EN" 
 
     name: Build and Deploy Job
     steps:
+      - name: Install dependencies
+        run: npm install
       - uses: actions/checkout@v3
         with:
           submodules: true
@@ -36,8 +38,8 @@ jobs:
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
-          api_location: "api" # Api source code path - optional
-          output_location: "build" # Built app content directory - optional
+          api_location: "" # Api source code path - optional
+          output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
