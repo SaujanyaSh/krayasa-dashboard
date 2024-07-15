@@ -16,7 +16,7 @@ jobs:
     env:
       API_URL: https://api.chalyo.com/graphql/
       API_URI: https://api.chalyo.com/graphql/
-      STATIC_URL: https://d1j7dqw93emtwa.cloudfront.net/
+      STATIC_URL: /dashboard/static/
       APPS_MARKETPLACE_API_URI: https://apps.saleor.io/api/v2/saleor-apps
       LOCALE_CODE: "EN" 
     name: Build and Deploy Job
