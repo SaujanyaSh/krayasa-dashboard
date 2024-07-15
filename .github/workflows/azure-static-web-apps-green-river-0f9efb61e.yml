@@ -14,6 +14,12 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    env:
+      API_URL: https://api.chalyo.com/graphql
+      API_URI: https://api.chalyo.com/graphql
+      STATIC_URL: d1j7dqw93emtwa.cloudfront.net
+      APPS_MARKETPLACE_API_URI: https://apps.saleor.io/api/v2/saleor-apps
+      LOCALE_CODE: "EN" 
     steps:
       - uses: actions/checkout@v3
         with:
