@@ -19,6 +19,7 @@ jobs:
       STATIC_URL: /dashboard/static/
       APPS_MARKETPLACE_API_URI: https://apps.saleor.io/api/v2/saleor-apps
       LOCALE_CODE: "EN" 
+      APP_MOUNT_URI: /dashboard/
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v3
